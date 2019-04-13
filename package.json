@@ -1,0 +1,32 @@
+{
+  "name": "mizu",
+  "version": "1.0.0",
+  "description": "A customized browser tab",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && rm -rf docs && mv build docs",
+    "test": "react-scripts test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iCyris/Mizu.git"
+  },
+  "author": "Cyris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iCyris/Mizu/issues"
+  },
+  "homepage": "https://github.com/iCyris/Mizu#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^2.1.8"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
