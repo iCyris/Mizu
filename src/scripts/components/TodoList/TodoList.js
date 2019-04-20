@@ -51,17 +51,17 @@ export default function TodoList() {
         <div className="mizu-todolist">
             <div className="head">Todo List</div>
             <TodoForm
-                onSubmit = {_handleSubmit}
-                value = {inputValue}
-                onChange = {e => setInputValue(e.target.value)}
+                onSubmit = { _handleSubmit }
+                value = { inputValue }
+                onChange = { e => setInputValue(e.target.value) }
             />
             <ul>
                 {todoList.map((todo, index) => (
                     <ListItem
-                        key = {index}
-                        todo = {todo}
-                        remove = {() => _handleClick({ type: "delete", index})}
-                        completed = {() => _handleClick({ type: "completed", index})}
+                        key = { index }
+                        todo = { todo }
+                        remove = {() => _handleClick({ type: "delete", index })}
+                        completed = {() => _handleClick({ type: "completed", index })}
                     />
                 ))}
             </ul>
