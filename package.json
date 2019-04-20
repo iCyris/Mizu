@@ -1,7 +1,7 @@
 {
   "name": "mizu",
   "version": "1.0.0",
-  "description": "A customized browser tab",
+  "description": "A customized browser homepage",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
@@ -21,7 +21,10 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^2.1.8",
+    "sass": "^1.19.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
   },
   "browserslist": [
     ">0.2%",

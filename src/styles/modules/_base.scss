@@ -1,0 +1,29 @@
+/*
+ * Base Style
+ */
+* {
+    padding: 0;
+    margin: 0;
+    &::before {}
+}
+body {
+    position: absolute;
+    width: 100vw; height: 100vh;
+    left: 0; top: 0;
+    color: $theme-color-black;
+    background-color: $theme-color-white;
+    font-family: "Lora", "STSong", "Open Sans", Arial, serif;
+    @media screen and (max-width: 760px) {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+#Mizu {
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    overflow: hidden;
+}
+::selection {
+    color: $theme-color-white;
+    background-color: $theme-color-black;
+}
