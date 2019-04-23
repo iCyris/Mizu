@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TodoForm from "./TodoForm"
 import ListItem from "./ListItem"
+import mizuConfig from "../../config/mizu-config"
 
 const tasks = [
     { name: "task 1", done: false },
@@ -43,28 +44,35 @@ export default function TodoList() {
             newTodoList.splice(index, 1)
             _updateLocalStorage(newTodoList)
         }
+        else if (type === "reset") {
+            newTodoList[index].done = false
+            _updateLocalStorage(newTodoList)
+        }
         return setTodoList(newTodoList)
     }
 
     //
     return (
         <div className="mizu-todolist">
-            <div className="head">Todo List</div>
+            <div className="todo-head">{ mizuConfig["todoListTitle"] }</div>
             <TodoForm
                 onSubmit = { _handleSubmit }
                 value = { inputValue }
                 onChange = { e => setInputValue(e.target.value) }
             />
-            <ul>
-                {todoList.map((todo, index) => (
-                    <ListItem
-                        key = { index }
-                        todo = { todo }
-                        remove = {() => _handleClick({ type: "delete", index })}
-                        completed = {() => _handleClick({ type: "completed", index })}
-                    />
-                ))}
-            </ul>
+            <div className="todo-content">
+                <ul>
+                    {todoList.map((todo, index) => (
+                        <ListItem
+                            key = { index }
+                            todo = { todo }
+                            remove = {() => _handleClick({ type: "delete", index })}
+                            completed = {() => _handleClick({ type: "completed", index })}
+                            reset = {() => _handleClick({ type: "reset", index })}
+                        />
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

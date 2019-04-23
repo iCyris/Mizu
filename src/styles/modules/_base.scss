@@ -12,7 +12,8 @@ body {
     left: 0; top: 0;
     color: $theme-color-black;
     background-color: $theme-color-white;
-    font-family: "Lora", "STSong", "Open Sans", Arial, serif;
+    font-family: 'FOT-筑紫オールド明朝 Pro R', 'Lora', 'STSong', 'Open Sans', Arial, serif;
+    font-size: 10px;
     @media screen and (max-width: 760px) {
         -webkit-overflow-scrolling: touch;
     }
@@ -22,8 +23,4 @@ body {
     width: 100%; height: 100%;
     left: 0; top: 0;
     overflow: hidden;
-}
-::selection {
-    color: $theme-color-white;
-    background-color: $theme-color-black;
 }
