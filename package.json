@@ -17,12 +17,13 @@
   "bugs": {
     "url": "https://github.com/iCyris/Mizu/issues"
   },
-  "homepage": "https://github.com/iCyris/Mizu#readme",
+  "homepage": "https://mizu.cyris.moe",
   "dependencies": {
+    "antd": "^3.16.5",
+    "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^2.1.8",
-    "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
   },
   "browserslist": [

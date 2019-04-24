@@ -48,6 +48,10 @@
             background-color: #c38118;
             cursor: pointer;
             box-shadow: 0 0 5px $theme-color-orange;
+            transition: all .2s ease;
+            &:hover {
+                box-shadow: 0 0 10px $theme-color-orange;
+            }
             &::before, &::after {
                 content: ""; position: absolute;
                 width: .16rem; height: 50%;
@@ -75,6 +79,7 @@
         li[data-state="done"] {
             .li-content {
                 text-decoration: line-through;
+                opacity: .4;
             }
         }
         .li-content {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TodoForm from "./TodoForm"
 import ListItem from "./ListItem"
+import { Alert } from 'antd'
 import mizuConfig from "../../config/mizu-config"
 
 const tasks = [
@@ -13,6 +14,7 @@ export default function TodoList() {
     const initList = JSON.parse(localStorage.getItem('todoList'))
     const [todoList, setTodoList] = useState(initList || tasks)
     const [inputValue, setInputValue] = useState("")
+    const [visible, setVisible] = useState(false)
 
     //
     const _updateLocalStorage = (newTodoList) => {
@@ -22,13 +24,14 @@ export default function TodoList() {
     //
     const _handleSubmit = e => {
         e.preventDefault()
-        if (inputValue === "") { return alert("Task name is required.") }
+        if (inputValue === "") { setVisible(true); return false }
 
         const newTodoList = [...todoList]
 
         newTodoList.push({ name: inputValue, done: false })
         setTodoList(newTodoList)
         _updateLocalStorage(newTodoList)
+
         setInputValue("")
     }
 
@@ -51,9 +54,24 @@ export default function TodoList() {
         return setTodoList(newTodoList)
     }
 
+    // Antd Alert
+    const _handleClose = () => {
+        setVisible(false)
+    }
+
     //
     return (
         <div className="mizu-todolist">
+            {
+                visible ? (
+                    <Alert
+                        message = "Task name is required."
+                        type = "warning"
+                        closable
+                        afterClose = { _handleClose }
+                    />
+                ) : null
+            }
             <div className="todo-head">{ mizuConfig["todoListTitle"] }</div>
             <TodoForm
                 onSubmit = { _handleSubmit }
