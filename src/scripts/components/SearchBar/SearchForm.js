@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Input, Select} from 'antd'
+import { Input, Select } from 'antd'
 import configEngine from "../../config/search-engine-config"
 
 export default () => {

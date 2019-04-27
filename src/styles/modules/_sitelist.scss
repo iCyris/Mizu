@@ -1,0 +1,99 @@
+/*
+ * SiteList Style
+ */
+.mizu-sites {
+    position: relative;
+    width: 50%; max-height: 60%;
+    left: 0;
+    padding: 5vh;
+}
+.mizu-sites-header {
+    position: relative;
+    width: 88%; height: auto;
+    padding: 0 5vh;
+    .adjust-site {
+        position: absolute;
+        right: 0; top: 0;
+        font-size: .8rem;
+        cursor: pointer;
+        background-color: $theme-color-black;
+        color: #fff;
+        padding: 1vmin;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        &::after {
+            content: ""; position: absolute;
+            width: calc(44vw - 10vh); height: 1px;
+            right: 0; bottom: 0;
+            background-color: $theme-color-black;
+        }
+    }
+}
+.mizu-sites-body {
+    position: relative;
+    width: 100%;
+    left: 0; top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8vh;
+}
+.site-item {
+    width: 6vmin; height: 6vmin;
+    margin-right: 3vmin;
+    margin-bottom: 3vmin;
+    .site-item-a {
+        color: $theme-color-black;
+        display: block;
+        width: 100%; height: 100%;
+        border-radius: 8px;
+        padding: .6vmin;
+        transition: all .3s ease;
+        &:hover {
+            box-shadow: 0 0 6px #aaaaaa;
+        }
+        img {
+            max-height: 6vmin; max-width: 6vmin;
+        }
+    }
+    .site-item-a-del {
+        position: relative;
+        width: 100%; height: 100%;
+        background-color: $theme-color-black;
+        transform: translateY(-100%);
+        cursor: pointer;
+        opacity: .8;
+        animation: item-del-fadein .4s ease;
+        &::before, &::after {
+            content: ""; position: absolute;
+            width: 80%; height: 2px;
+            left: 10%; top: calc(50% - 1px);
+            background-color: #fff;
+        }
+        &::before { transform: rotate(-45deg); }
+        &::after  { transform: rotate(45deg); }
+    }
+}
+.add-site {
+    position: relative;
+    cursor: pointer;
+    border: $theme-color-black 1px dashed;
+    animation: fadein .4s ease;
+    &::before, &::after {
+        content: ""; position: absolute;
+        width: 70%; height: 2px;
+        left: 15%; top: calc(50% - 1px);
+        background-color: $theme-color-black;
+    }
+    &::after {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes item-del-fadein {
+    from {opacity: 0}
+    to {opacity: .8}
+}
+@keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+}

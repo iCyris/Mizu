@@ -7,3 +7,7 @@ ReactDOM.render(
     <Mizu />,
     document.getElementById('root')
 )
+
+/*
+ * localStorage.clear();
+ */
